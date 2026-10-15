@@ -1,7 +1,7 @@
 # Keystroke Lab
 
 A research page for checking what a web page can see while someone — or something, like
-an app's auto-type feature — types into it. It records every keystroke, lets you replay the session
+Aperture's auto-type — types into it. It records every keystroke, lets you replay the session
 like a movie, and writes a report that flags anything that doesn't look like a person at a keyboard.
 Everything runs and stays in the browser.
 
@@ -65,7 +65,7 @@ capitals/symbols without Shift, keys released instantly, text appearing with no 
 keys under 25 ms apart, large pastes, the browser window losing focus while the page stays on screen
 (another app or overlay took the keyboard). Medium: leaving the tab or minimising the browser, metronome-even rhythm or hold times, very high speed,
 large blocks inserted at once, key-up not matching key-down. Low/info: no corrections at all, the
-editor losing focus to something else on the page, lone modifier presses (what a page sees of an app's global hotkey), shortcuts, auto-repeat, pauses.
+editor losing focus to something else on the page, lone modifier presses (a global hotkey such as Aperture's), shortcuts, auto-repeat, pauses.
 
 The logic lives in `src/lib/analyze.js`; recording in `src/lib/recorder.js`; the code-editor
 behaviour in `src/lib/editor.js`; downloads in `src/lib/export.js`.

@@ -4,7 +4,6 @@ import { newSession, startRecording } from '../lib/recorder.js';
 import { analyze } from '../lib/analyze.js';
 import { fmtTime } from '../lib/replay.js';
 import { SEVERITY, VERDICT_COLOR } from '../lib/format.js';
-import { APP, APP_TITLE } from '../lib/brand.js';
 import { deviceInfo, mergeServerPing, pingServer, webrtcIps } from '../lib/environment.js';
 
 const PREFS = 'kslab.prefs';
@@ -160,7 +159,7 @@ export default function Recorder({ onRecorded, onRecordingChange }) {
         <div className="setup-row">
           <label className="field grow">
             <span>Session name</span>
-            <input value={name} onChange={(e) => setName(e.target.value)} placeholder={`e.g. ${APP_TITLE} auto-type, run 3`} disabled={recording} />
+            <input value={name} onChange={(e) => setName(e.target.value)} placeholder="e.g. Aperture auto-type, run 3" disabled={recording} />
           </label>
           <label className="field">
             <span>Editor</span>
@@ -219,7 +218,7 @@ export default function Recorder({ onRecorded, onRecordingChange }) {
 
         <aside className="panel live-panel">
           <h2>Live feedback</h2>
-          {!r && <p className="muted small">Numbers and flags appear here as you (or {APP}) type. Nothing leaves this browser.</p>}
+          {!r && <p className="muted small">Numbers and flags appear here as you (or Aperture) type. Nothing leaves this browser.</p>}
           {r && (
             <>
               <div className="verdict-line" style={{ '--c': VERDICT_COLOR[r.verdict.level] }}><span className="dot" />{r.verdict.text}</div>
@@ -289,10 +288,10 @@ export default function Recorder({ onRecorded, onRecordingChange }) {
             </label>
           </div>
           <details className="tips">
-            <summary>Testing {APP}</summary>
+            <summary>Testing Aperture</summary>
             <ol className="small">
               <li>Click into the editor — recording starts.</li>
-              <li>Trigger {APP}'s auto-type (its hotkey or overlay) and let it finish.</li>
+              <li>Trigger Aperture's auto-type (its hotkey or overlay) and let it finish.</li>
               <li>Press <b>Stop &amp; analyse</b> to watch the replay and read the report.</li>
               <li>Record yourself typing the same text as a human baseline, then compare in Sessions.</li>
             </ol>
