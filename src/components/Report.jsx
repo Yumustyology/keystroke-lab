@@ -45,7 +45,7 @@ function Report({ session, report, onJump }) {
         <div className="charts">
           <figure className="wide">
             <figcaption>Gap before each key over the session <span className="muted">(dots: each key · line: rolling median · capped at 1.5 s)</span></figcaption>
-            <div className="chart" dangerouslySetInnerHTML={{ __html: charts.timeline }} />
+            <div className="chart chart-scroll" dangerouslySetInnerHTML={{ __html: charts.timeline }} />
           </figure>
           <figure>
             <figcaption>Gap between keys <span className="muted">— people: a wide hump</span></figcaption>

@@ -1,7 +1,7 @@
 // Makes a plain <textarea> behave like a code editor (VS Code, LeetCode, CodeMirror):
 // auto-indent on Enter, auto-closed brackets you can type over, Backspace removing an empty
 // pair, a closing bracket on a blank line snapping back one level, Tab inserting spaces.
-// That is what Aperture's auto-type expects on a coding page, so it has to be here for a
+// That is what an auto-typing app expects on a coding page, so it has to be here for a
 // fair test. Every edit made here (rather than by the browser) is reported through onEdit.
 import { diffText } from './diff.js';
 

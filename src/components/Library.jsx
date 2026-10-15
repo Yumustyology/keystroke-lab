@@ -72,18 +72,18 @@ export default function Library({ items, onOpen, onDelete, onChanged }) {
               <tbody>
                 {rows.map(({ m, s, r }) => (
                   <tr key={m.id}>
-                    <td><button className="link" onClick={() => onOpen(m.id)} disabled={!s}>{m.name}</button></td>
-                    <td className="small muted">{new Date(m.created).toLocaleString()}</td>
-                    <td className="mono">{fmtTime(m.durationMs || 0)}</td>
+                    <td className="cell-name"><button className="link" onClick={() => onOpen(m.id)} disabled={!s}>{m.name}</button></td>
+                    <td className="small muted cell-date">{new Date(m.created).toLocaleString()}</td>
+                    <td className="mono" data-label="Length">{fmtTime(m.durationMs || 0)}</td>
                     {r ? (
                       <>
-                        <td className="num">{r.stats.keydowns}</td>
-                        <td className="num">{r.stats.wpmWhileTyping}</td>
-                        <td className="num">{r.stats.ikiMedian} ms</td>
-                        <td className="num">{r.stats.holdMedian} ms</td>
-                        <td className="num">{Math.round(r.stats.ikiCv * 100)}%</td>
-                        <td><span className="verdict-tag" style={{ '--c': VERDICT_COLOR[r.verdict.level] }}><span className="dot" />{r.verdict.level === 'ok' ? 'human-like' : r.verdict.level === 'medium' ? 'check' : 'automated'}</span></td>
-                        <td>
+                        <td className="num" data-label="Keys">{r.stats.keydowns}</td>
+                        <td className="num" data-label="WPM">{r.stats.wpmWhileTyping}</td>
+                        <td className="num" data-label="Gap">{r.stats.ikiMedian} ms</td>
+                        <td className="num" data-label="Hold">{r.stats.holdMedian} ms</td>
+                        <td className="num" data-label="Rhythm var.">{Math.round(r.stats.ikiCv * 100)}%</td>
+                        <td data-label="Verdict"><span className="verdict-tag" style={{ '--c': VERDICT_COLOR[r.verdict.level] }}><span className="dot" />{r.verdict.level === 'ok' ? 'human-like' : r.verdict.level === 'medium' ? 'check' : 'automated'}</span></td>
+                        <td data-label="Flags">
                           <div className="flag-dots">
                             {r.flags.filter((f) => f.severity !== 'info').map((f) => (
                               <span key={f.id} className="sev-dot" title={f.title} style={{ background: SEVERITY[f.severity].color }} />

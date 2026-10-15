@@ -114,7 +114,7 @@ main{max-width:1040px;margin:0 auto;padding:28px 16px 60px}h1{font-size:24px;mar
 .keys{min-height:26px;margin-top:8px;display:flex;gap:4px;flex-wrap:wrap}.keys kbd{font:12px var(--mono);border:1px solid var(--border);border-bottom-width:2px;border-radius:5px;padding:1px 6px;background:var(--panel)}
 table{border-collapse:collapse;width:100%;font-size:13px}td{padding:4px 8px;border-top:1px solid var(--border);vertical-align:top}td:first-child{color:var(--muted);width:160px}
 .final{font:12.5px/1.5 var(--mono);white-space:pre-wrap;word-break:break-word;background:var(--panel2);border-radius:8px;padding:12px;max-height:400px;overflow:auto;margin:0}
-@media (max-width:700px){.charts{grid-template-columns:1fr}}
+@media (max-width:700px){.charts{grid-template-columns:1fr}.charts .wide{overflow-x:auto}.charts .wide svg{min-width:560px}main{padding:18px 12px 40px}td:first-child{width:auto}.ctl button,.chip{min-height:34px}.rp{height:300px}}
 `;
 
 const REPORT_JS = `

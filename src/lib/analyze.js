@@ -205,7 +205,7 @@ export function analyze(session) {
   }
   if (lonely.length) {
     const kinds = [...new Set(lonely.map((p) => p.down.key))];
-    flag('lone-modifiers', 'low', 'Modifier keys pressed on their own', `${lonely.length} press(es) of ${kinds.join('/')} with no other key — what a page sees when a global shortcut (like Aperture's Ctrl+Shift+B) is used: the modifiers, but not the final key.`, lonely.map((p) => p.down.t));
+    flag('lone-modifiers', 'low', 'Modifier keys pressed on their own', `${lonely.length} press(es) of ${kinds.join('/')} with no other key — what a page sees when an app's global shortcut (e.g. Ctrl+Shift+B) is used: the modifiers, but not the final key.`, lonely.map((p) => p.down.t));
   }
   if (unreleased.filter((e) => !MODIFIER_KEYS.has(e.key)).length) flag('stuck-keys', 'info', 'Keys never released', `${unreleased.length} key(s) were pressed but no release was recorded (the release may have happened outside the page).`, unreleased.map((e) => e.t));
   const repeats = downs.filter((e) => e.rep);
